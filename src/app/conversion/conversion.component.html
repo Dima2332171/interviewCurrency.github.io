@@ -1,0 +1,26 @@
+<main>
+  <div class="main-container">
+    <div class="selection-container">
+      <div>
+      <select #c1 name="" class="form-select" id="currency1" (mouseleave)="changeBase1(c1.value)">
+        <option value="USD">USD</option>
+        <option value="EUR">EUR</option>
+        <option value="UAH">UAH</option>
+      </select>
+        </div>
+      <p>to</p>
+      <div>
+      <select #c2 name="" class="form-select" id="currency2" (mouseleave)="changeBase2(c2.value)">
+        <option value="USD">USD</option>
+        <option value="EUR">EUR</option>
+        <option value="UAH">UAH</option>
+      </select>
+      </div>
+    </div>
+    <input type="number" [(ngModel)]="numberCurrency">
+    <button class="btn btn-secondary" on-click="convert()">Submit</button>
+    <div class="result-container">
+      <div>{{inputCurrency|number:'1.1-2'}} {{base1}} = {{result|number:'1.1-2'}} {{base2}}</div>
+    </div>
+  </div>
+</main>
